@@ -1,0 +1,17 @@
+
+
+
+.nav-list, .nav-list ul { 
+  padding-left: 0px;
+  padding-right: 0px;
+  list-style-type: none;
+  li {
+    label, input { 
+      padding-left: 0px;
+    }
+  
+  }
+}
+
+.sync_folders { float: right }
+.sync_folders.btn { padding-top: 10px; }

@@ -1,0 +1,26 @@
+- model_class = User
+.row-fluid
+  .span3
+    .well.sidebar-nav
+      = form_for @user do |user_form|
+        %h4 Group Folders
+        = group_list(@user.show_groups)
+        %h4 User Folders
+        = folder_list(@user.show_folders)
+        = user_form.submit "Update Folders", :class => "sync_folders btn btn-info"
+  .span9
+    = bootstrap_flash
+    .page-header
+      %h1
+        =t '.title', :default => @user.name
+        = link_to "Edit My Profile", edit_user_path(@user), :class => 'btn btn-link'
+
+    %p
+      - @user.items.each do |item|
+        = item.to_apa
+        - item.drive_files.each do |file|
+          = link_to(content_tag("i", "", :class => "icon-file" ), file.drive_url)
+        %br 
+        %br 
+      
+  
