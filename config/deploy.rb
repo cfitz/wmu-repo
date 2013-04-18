@@ -16,7 +16,7 @@ require "rvm/capistrano"
 set :application, 'wmu-repo'
 
 set :stages, %w(production staging)
-set :default_stage, 'staging'
+set :default_stage, 'production'
 require 'capistrano/ext/multistage'
 
 default_run_options[:pty] = true
@@ -24,7 +24,7 @@ ssh_options[:forward_agent] = true
 
 set :repository, "https://github.com/cfitz/wmu-repo.git"
 set :deploy_to, "/var/www/#{application}"
-set :branch, 'development'
+set :branch, "master"
 
 set :scm, :git
 set :scm_verbose, true
@@ -32,7 +32,7 @@ set :scm_verbose, true
 set :deploy_via, :remote_cache
 set :use_sudo, true
 set :keep_releases, 3
-set :user, 'chrisfitzpatrick'
+set :user, 'deploye'
 
 set :bundle_without, [:development, :test, :acceptance]
 set :rake, "#{rake} --trace"
@@ -55,5 +55,5 @@ namespace :deploy do
 end
 
 task :upload_env_vars do
-  #upload(".env.#{rails_env}", "#{release_path}/.env.#{rails_env}", :via => :scp)
+  upload(".env.#{rails_env}", "#{release_path}/.env.#{rails_env}", :via => :scp)
 end

@@ -36,6 +36,7 @@ gem "mongoid", ">= 3.1.2"
 gem 'delayed_job_mongoid'
 gem 'bibtex-ruby'
 gem 'citeproc-ruby'
+gem 'will_paginate_mongoid'
 gem "haml-rails", ">= 0.4"
 gem "html2haml", ">= 1.0.1", :group => [:development]
 gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
@@ -48,8 +49,8 @@ gem "capybara", ">= 2.0.3", :group => [ :test]
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "omniauth-mendeley", :git => "git://github.com/cfitz/omniauth-mendeley.git"
 gem "quiet_assets", ">= 1.0.2", :group => [:development ]
-gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'google-api-client', '>= 0.4.4', :require => 'google/api_client'
+gem 'dotenv-rails'

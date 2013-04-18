@@ -1,0 +1,6 @@
+= item.to_apa
+- item.drive_files.each do |file|
+  = link_to(content_tag("i", "", :class => "icon-file" ), file.drive_url)
+
+%br 
+%br

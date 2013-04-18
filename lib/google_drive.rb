@@ -12,15 +12,16 @@ class GoogleDrive
         @client = Google::APIClient.new
         @drive = @client.discovered_api('drive', 'v2')
         
-        key = Google::APIClient::PKCS12.load_key(File.join("/var", "keys", "2ea91b4d9ce7f0f202b209099f8114b37e6d56c9-privatekey.p12"), 'notasecret')
+        key = Google::APIClient::PKCS12.load_key(ENV["GOOGLE_KEY_FILENAME"], ENV["GOOGLE_KEY_PASSWORD"])
         service_account = Google::APIClient::JWTAsserter.new(
-            '233199329657-ogutik13rrlffjm5dqatb5e5trvqocod@developer.gserviceaccount.com',
+            ENV["GOOGLE_SERVICE_ACCOUNT"],
             'https://www.googleapis.com/auth/drive',
             key)
             
         @client.authorization = service_account.authorize("library@wmu.se")
   end
-  
+
+
   
   # this take an array of items. like [ { { :title => "foo", :description => "blah blah", url =>   }  }]
   def upload_items(items)
