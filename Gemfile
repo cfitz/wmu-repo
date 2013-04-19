@@ -17,18 +17,16 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails"
+  gem "less-rails"
 end
 
 gem 'capistrano'
 gem 'capistrano-ext'
 gem 'rvm-capistrano'
-gem 'knife-solo'
-gem 'knife-digital_ocean'
 gem 'unicorn'
 gem 'jquery-rails'
 gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
 gem 'faraday'
 gem "faraday_middleware"
 gem "simple_oauth"
@@ -47,7 +45,7 @@ gem "cucumber-rails", ">= 1.3.1", :group => :test, :require => false
 gem "launchy", ">= 2.2.0", :group => [:test]
 gem "capybara", ">= 2.0.3", :group => [ :test]
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
-gem "omniauth-mendeley", :git => "git://github.com/cfitz/omniauth-mendeley.git"
+gem "omniauth-mendeley"
 gem "quiet_assets", ">= 1.0.2", :group => [:development ]
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
