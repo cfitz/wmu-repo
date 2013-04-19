@@ -17,7 +17,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "twitter-bootstrap-rails"
   gem "less-rails"
 end
 
@@ -31,6 +30,7 @@ gem 'faraday'
 gem "faraday_middleware"
 gem "simple_oauth"
 gem "mongoid", ">= 3.1.2"
+gem "twitter-bootstrap-rails"
 gem 'whenever', :require => false
 gem 'bibtex-ruby'
 gem 'citeproc-ruby'
