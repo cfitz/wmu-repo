@@ -76,6 +76,15 @@ class User
       end
   end
   
+  def self.sync_all_folders
+    User.all.each do |user|
+      puts "Syncing User: #{user.id}"
+      user.sync_folders.each do |folder| 
+        puts "Syncing Folder: #{folder}"
+        FolderSync.process(user, folder)
+      end
+    end
+  end
   
   protected
   

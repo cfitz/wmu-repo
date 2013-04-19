@@ -6,3 +6,4 @@ jQuery ->
 				$('.pagination').text("Please wait...")
 				$.getScript(url)
 		$(window).scroll()
+		

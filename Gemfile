@@ -33,7 +33,7 @@ gem 'faraday'
 gem "faraday_middleware"
 gem "simple_oauth"
 gem "mongoid", ">= 3.1.2"
-gem 'delayed_job_mongoid'
+gem 'whenever', :require => false
 gem 'bibtex-ruby'
 gem 'citeproc-ruby'
 gem 'will_paginate_mongoid'
@@ -53,4 +53,5 @@ gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 gem "hub", ">= 1.10.2", :require => nil, :group => [:development]
 gem 'google-api-client', '>= 0.4.4', :require => 'google/api_client'
+gem 'capistrano-unicorn'
 gem 'dotenv-rails'
